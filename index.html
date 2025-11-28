@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe.Ia - Agentes de IA Inteligentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #050505; 
+            color: #ffffff; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(to right, #ff8c42, #ff429e, #42daff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Gradient Button */
+        .btn-gradient {
+            background: linear-gradient(90deg, #ff8c42 0%, #ff429e 100%);
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+        .btn-gradient:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 20px -10px rgba(255, 66, 158, 0.5);
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-3xl font-bold tracking-tighter cursor-pointer">
+                <span class="text-gray-400">vibe</span><span class="text-cyan-400">.ia</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#como-funciona" class="hover:text-white transition">Como Funciona</a>
+                <a href="#diferenciais" class="hover:text-white transition">Diferenciais</a>
+                <a href="#comparativo" class="hover:text-white transition">Por que Agentes?</a>
+            </div>
+
+            <a href="#contato" class="hidden md:inline-block px-5 py-2 rounded-full border border-gray-700 hover:border-cyan-400 hover:text-cyan-400 transition text-sm font-semibold">
+                Área do Cliente
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="como-funciona" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Glow Background -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Left Text -->
+            <div class="lg:w-1/2 text-center lg:text-left fade-in-up" style="animation-delay: 0.1s;">
+                <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-gray-800 bg-gray-900/50 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+                    ✨ Tecnologia de Atendimento 24/7
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Seu atendimento no <br>
+                    <span class="gradient-text">Piloto Automático</span>.
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Crie agentes inteligentes que respondem no WhatsApp, Instagram e Site, tiram dúvidas complexas e agendam compromissos direto no seu calendário oficial.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button class="btn-gradient px-8 py-4 rounded-lg font-bold text-lg">
+                        Criar meu Agente Agora
+                    </button>
+                    <button class="px-8 py-4 rounded-lg font-bold text-lg border border-gray-700 hover:bg-gray-800 transition">
+                        Ver Demonstração
+                    </button>
+                </div>
+                <p class="mt-6 text-sm text-gray-500">
+                    ✅ Integração oficial Meta, Google & Microsoft.
+                </p>
+            </div>
+
+            <!-- Right Mockup -->
+            <div class="lg:w-1/2 flex justify-center fade-in-up" style="animation-delay: 0.3s;">
+                <div class="relative w-[300px] h-[600px] bg-gray-900 border-8 border-gray-800 rounded-[3rem] shadow-2xl shadow-cyan-500/20 flex flex-col overflow-hidden">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+                    
+                    <div class="flex-1 bg-[#0b141a] p-4 pt-12 flex flex-col space-y-4 font-sans text-sm">
+                        <!-- Chat Bubbles -->
+                        <div class="self-end bg-[#005c4b] text-white p-3 rounded-l-lg rounded-tr-lg max-w-[85%] shadow-md">
+                            Olá, tem horário para consultoria amanhã?
+                            <div class="text-[10px] text-right opacity-70 mt-1">10:42</div>
+                        </div>
+                        
+                        <div class="self-start bg-[#202c33] text-white p-3 rounded-r-lg rounded-tl-lg max-w-[85%] shadow-md border border-gray-700">
+                            <span class="text-xs text-orange-400 font-bold block mb-1">Assistente Virtual</span>
+                            Olá! Tenho sim. Amanhã (Sexta) tenho livre às: <br>• 14:00<br>• 16:30<br>Qual prefere? 🤖
+                            <div class="text-[10px] text-right opacity-70 mt-1">10:42</div>
+                        </div>
+
+                        <div class="self-end bg-[#005c4b] text-white p-3 rounded-l-lg rounded-tr-lg max-w-[85%] shadow-md">
+                            Pode ser às 16:30.
+                            <div class="text-[10px] text-right opacity-70 mt-1">10:43</div>
+                        </div>
+
+                         <div class="self-start bg-[#202c33] text-white p-3 rounded-r-lg rounded-tl-lg max-w-[85%] shadow-md border border-gray-700">
+                            Perfeito! Agendado para 16:30. Já enviei o convite para seu Google Agenda. ✅
+                            <div class="text-[10px] text-right opacity-70 mt-1">10:43</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATIONS STRIP (LOGOS UPDATED) -->
+    <div class="border-y border-gray-900 bg-black/50 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-500 mb-8 uppercase tracking-widest font-semibold">Compatível com as ferramentas que você usa</p>
+            
+            <!-- Logos Grid -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                
+                <!-- Google Calendar -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 2V6" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 2V6" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 10H21" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="7" y="14" width="4" height="4" fill="#34A853"/> 
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">Calendar</span>
+                </div>
+
+                <!-- WhatsApp (CORRIGIDO) -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 11.75C24 18.5 18.5 24 11.75 24C9.69 24 7.74 23.49 6.03 22.58L0.75 24L2.25 18.52C1.4 16.59 0.93 14.47 0.93 12.25C0.93 5.5 6.43 0 13.18 0C19.93 0 25.43 5.5 25.43 12.25H24V11.75Z" fill="#25D366" opacity="0"/> <!-- Hitbox fill -->
+                        <path d="M12.0117 0C5.39064 0 0.0078125 5.3831 0.0078125 12.0041C0.0078125 14.1207 0.556653 16.1157 1.5303 17.8596L0 23.4375L5.70701 21.9404C7.3877 22.8552 9.30958 23.3333 11.3145 23.3333H11.3195C17.9356 23.3333 23.3234 17.9452 23.3234 11.3242C23.3234 8.30397 22.1465 5.45938 20.0098 3.32269C17.8731 1.18599 15.0335 0.00500488 12.0117 0.00500488V0ZM11.3195 21.3653H11.3145C9.5298 21.3653 7.7781 20.8848 6.2526 19.979L5.89222 19.7637L2.94931 20.5345L3.73516 17.6663L3.51493 17.3159C2.53384 15.7592 2.01831 13.9655 2.01831 12.1142C2.01831 6.89965 6.32768 2.65918 11.5447 2.65918C14.0872 2.65918 16.4747 3.65018 18.2717 5.44716C20.0687 7.24414 21.0597 9.63162 21.0597 12.1741C21.0597 17.2387 16.7453 21.3653 11.3195 21.3653ZM16.3996 15.4239C16.1243 15.2838 14.7578 14.6131 14.5025 14.523C14.2473 14.4329 14.0621 14.3879 13.8769 14.6632C13.6917 14.9384 13.1611 15.5591 12.996 15.7493C12.8308 15.9395 12.6656 15.9645 12.3904 15.8244C12.1151 15.6842 11.2291 15.394 10.178 14.4579C9.35199 13.7222 8.79639 12.8163 8.63122 12.531C8.46604 12.2457 8.61119 12.0956 8.75135 11.9554C8.87648 11.8303 9.02664 11.6301 9.16178 11.4699C9.29692 11.3098 9.34197 11.1947 9.43206 11.0145C9.52215 10.8343 9.4771 10.6741 9.40702 10.534C9.33694 10.3938 8.79639 9.06246 8.57116 8.52191C8.35092 7.99637 8.13068 8.06645 7.9655 8.06645C7.81534 8.06645 7.64016 8.06144 7.46498 8.06144C7.2898 8.06144 7.0045 8.12651 6.76425 8.38678C6.52399 8.64705 5.84326 9.28276 5.84326 10.574C5.84326 11.8653 6.78427 13.1116 6.91942 13.2918C7.05456 13.472 8.76635 16.1097 11.3896 17.2409C12.0103 17.5062 12.4958 17.6663 12.8712 17.7865C13.4318 17.9616 13.9474 17.9416 14.3528 17.8816C14.8033 17.8165 15.7388 17.3159 15.934 16.7754C16.1292 16.2348 16.1292 15.7744 16.0691 15.6743C16.0091 15.5742 15.8689 15.5141 15.5936 15.374L16.3996 15.4239Z" fill="#25D366"/>
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">WhatsApp</span>
+                </div>
+
+                <!-- Instagram -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="#E1306C" stroke-width="2"/>
+                        <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7616 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">Instagram</span>
+                </div>
+
+                <!-- Outlook -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12Z" stroke="#0078D4" stroke-width="2"/>
+                        <path d="M7 12L12 15L17 12V10L12 7L7 10V12Z" fill="#0078D4"/>
+                        <path d="M7 12V16C7 16.55 7.45 17 8 17H16C16.55 17 17 16.55 17 16V12" stroke="#0078D4" stroke-width="2"/>
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">Outlook</span>
+                </div>
+
+                <!-- WordPress (CORRIGIDO) -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.372 0 0 5.373 0 12C0 15.088 1.168 17.902 3.12 20.06L10.392 2.616H7.2V0.984H12.792V2.616H11.088L14.496 12.864L16.896 5.664C17.208 4.704 17.376 4.104 17.376 3.408C17.376 2.808 17.208 2.616 16.368 2.616H15.6V0.984H20.76V2.616H19.896C18.96 2.616 18.72 2.856 18.432 3.696L14.616 14.88L14.544 14.856L10.968 4.104L7.512 14.28L3.936 4.392C4.944 1.752 7.728 0 12 0ZM12.024 12.024L15.336 21.312C14.28 21.768 13.152 22.008 12 22.008C10.848 22.008 9.72 21.768 8.664 21.312L12.024 12.024ZM2.088 12C2.088 11.232 2.16 10.464 2.304 9.744L6.648 21.576C4.008 19.584 2.088 16.152 2.088 12ZM21.912 12C21.912 12.456 21.888 12.912 21.84 13.368L18.432 3.528C20.664 5.616 21.912 8.616 21.912 12Z" fill="#21759B"/>
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">WordPress</span>
+                </div>
+
+                <!-- Web/Site Generic -->
+                <div class="group flex flex-col items-center gap-2">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" class="text-purple-500" stroke="currentColor" />
+                        <line x1="2" y1="12" x2="22" y2="12" class="text-purple-500" />
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" class="text-purple-500" />
+                    </svg>
+                    <span class="text-xs text-gray-500 group-hover:text-white transition">Web / Site</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section id="diferenciais" class="py-24 bg-[#0a0a0a] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+                    Inteligência Artificial focada em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Performance</span>
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    Elimine gargalos operacionais com uma tecnologia proprietária que entende o seu negócio.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group p-8 bg-[#111] rounded-2xl border border-gray-800 hover:border-cyan-500/50 transition duration-500 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-gray-900 flex items-center justify-center border border-gray-700 group-hover:border-cyan-500/50 group-hover:text-cyan-400 text-gray-400 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Sincronização Real-Time</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Conectividade nativa com Google Calendar e Outlook. O agente verifica disponibilidade e bloqueia horários instantaneamente.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group p-8 bg-[#111] rounded-2xl border border-gray-800 hover:border-pink-500/50 transition duration-500 hover:shadow-[0_0_30px_rgba(236,72,153,0.1)]">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-gray-900 flex items-center justify-center border border-gray-700 group-hover:border-pink-500/50 group-hover:text-pink-400 text-gray-400 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M12 2v10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Contexto & Nuance</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Utilizamos modelos avançados de NLP. Respostas técnicas, precisas e humanizadas, baseadas na documentação da sua empresa.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group p-8 bg-[#111] rounded-2xl border border-gray-800 hover:border-orange-500/50 transition duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.1)]">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-gray-900 flex items-center justify-center border border-gray-700 group-hover:border-orange-500/50 group-hover:text-orange-400 text-gray-400 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Gestão Omnichannel</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Centralize o fluxo de entrada do WhatsApp e Instagram. Tenha controle total sobre as interações em um dashboard único.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section id="comparativo" class="py-24 bg-black relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-cyan-900/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Não confunda <span class="text-gray-500 line-through decoration-red-500">Chatbot</span> com <span class="gradient-text">Agentes IA</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    A diferença entre irritar o cliente com menus robóticos e oferecer uma experiência de conversão fluida.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                
+                <!-- Old Chatbot -->
+                <div class="p-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] opacity-70 hover:opacity-100 transition duration-500">
+                    <div class="flex items-center gap-3 mb-6 border-b border-gray-800 pb-4">
+                        <div class="p-2 bg-gray-800 rounded-lg text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-300">Chatbot Tradicional</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <span class="text-red-500 mt-1">✕</span>
+                            <span>Baseado em árvores rígidas ("Digite 1").</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <span class="text-red-500 mt-1">✕</span>
+                            <span>Não entende erros de digitação ou contexto.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <span class="text-red-500 mt-1">✕</span>
+                            <span>Apenas envia links, não agenda sozinho.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vibe.Ia Agent -->
+                <div class="relative p-1 rounded-2xl bg-gradient-to-r from-[#ff8c42] via-[#ff429e] to-[#42daff]">
+                    <div class="h-full p-8 rounded-xl bg-[#0a0a0a] relative">
+                        <div class="absolute -top-4 right-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-cyan-500/20">
+                            Vibe.Ia Tech
+                        </div>
+
+                        <div class="flex items-center gap-3 mb-6 border-b border-gray-800 pb-4">
+                            <div class="p-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg text-cyan-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Agente Neural IA</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <span class="text-green-400 mt-1 font-bold">✓</span>
+                                <span><strong class="text-white">Conversa fluida:</strong> Entende intenção e gírias.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <span class="text-green-400 mt-1 font-bold">✓</span>
+                                <span><strong class="text-white">Autonomia:</strong> Acessa agenda e marca horários.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <span class="text-green-400 mt-1 font-bold">✓</span>
+                                <span><strong class="text-white">Treinável:</strong> Aprende com os manuais da sua empresa.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contato" class="py-20 border-t border-gray-900 bg-[#050505]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                Pronto para <span class="text-white">escalar</span> sua operação?
+            </h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+                Deixe a tecnologia operacional com a Vibe.Ia e foque no estratégico do seu negócio. Setup completo em menos de 48 horas.
+            </p>
+            <button class="btn-gradient px-10 py-5 rounded-lg font-bold text-xl shadow-lg shadow-purple-500/20 w-full md:w-auto">
+                Agendar Demonstração Técnica
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-left">
+                <span class="text-2xl font-bold tracking-tighter text-white">vibe.ia</span>
+                <p class="text-gray-500 text-sm mt-2">Soluções de IA para negócios modernos.</p>
+            </div>
+            
+            <div class="flex space-x-8 text-sm text-gray-400">
+                <a href="#" class="hover:text-white transition">Privacidade</a>
+                <a href="#" class="hover:text-white transition">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition">Suporte</a>
+            </div>
+        </div>
+        <div class="text-center mt-10 text-gray-700 text-xs">
+            © 2024 Vibe.Ia Solutions. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
